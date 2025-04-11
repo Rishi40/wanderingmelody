@@ -61,7 +61,23 @@ def recommendations():
     if not recommended_songs_with_scores:
         return jsonify([])  
     
-    song_details = ml.get_song_details_with_ratings(recommended_songs_with_scores)
+    # song_details = ml.get_song_details_with_ratings(recommended_songs_with_scores)
+    song_details = [
+        {
+            "title": "Dummy Song Title 1",
+            "artist": "Dummy Artist 1",
+            "album": "Dummy Album 1",
+            "genre": "Dummy Genre 1",
+            "rating": "5/5"
+        },
+        {
+            "title": "Dummy Song Title 2",
+            "artist": "Dummy Artist 2",
+            "album": "Dummy Album 2",
+            "genre": "Dummy Genre 2",
+            "rating": "4.5/5"
+        }
+    ]
     return jsonify(song_details)
 
 if __name__ == "__main__":
