@@ -52,14 +52,14 @@ def recommendations():
     inferred_weather_mood = weather_mood_map.get(weather.lower(), "") if weather else ""
 
     print("calling svd rec songs function")
-    # Call the recommendation function
-    recommended_songs_with_scores, synonyms = ml.svd_recommend_songs(mood, cleaned_tokenized_lyrics, clean_song_count, age)
+    # # Call the recommendation function
+    # recommended_songs_with_scores, synonyms = ml.svd_recommend_songs(mood, cleaned_tokenized_lyrics, clean_song_count, age)
     
-    #recommended_songs = [x[0] for x in recommended_songs_with_scores]
+    # #recommended_songs = [x[0] for x in recommended_songs_with_scores]
 
-    print("finished svd rec songs function")
-    if not recommended_songs_with_scores:
-        return jsonify([])  
+    # print("finished svd rec songs function")
+    # if not recommended_songs_with_scores:
+    #     return jsonify([])  
     
     # song_details = ml.get_song_details_with_ratings(recommended_songs_with_scores)
     song_details = [
