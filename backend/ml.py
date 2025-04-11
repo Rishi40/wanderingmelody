@@ -26,27 +26,6 @@ except AttributeError:
     pass
 else:
     ssl._create_default_https_context = _create_unverified_https_context
-    
-'''
-def safe_nltk_download(resource):
-    try:
-        find(resource)
-    except LookupError:
-        logging.info(f"download missing nltk resource: {resource}")
-        nltk.download(resource)
-
-def ensure_nltk_resources():
-    required_resources = [
-        'stopwords',
-        'punkt',
-        'wordnet',
-        'omw-1.4'  
-    ]
-    for res in required_resources:
-        safe_nltk_download(res)
-        
-ensure_nltk_resources()
-'''
 
 # Define a stopwords list manually
 custom_stopwords = set([
